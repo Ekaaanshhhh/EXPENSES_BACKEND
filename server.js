@@ -1,6 +1,7 @@
 import express from "express"
 import router from "./routes/expenses.routes.js";
 import connectDB from "./db/connectDB.js";
+import cors from "cors";
 import dotenv from "dotenv"
 dotenv.config();
 
@@ -12,6 +13,7 @@ const PORT  = process.env.PORT || 9000;
 //middlewares
 app.use(express.json());
 app.use("/api/expenses",router);
+app.use(cors());
 
 
 
